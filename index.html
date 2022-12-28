@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMFG</title>
+    <script type="module" src="index.js"></script>
+
+    <style>
+        body {
+            background: #232729;
+            font: 200 16px/1.5 monospace;
+            font-feature-settings: "kern" 1;
+            font-kerning: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #bbbbbb;
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        a:visited {
+            color: rgb(254, 121, 5);
+            text-decoration: none;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        canvas {
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h2>Mario's BMFG</h2>
+        <p>Load a fixed-width TTF file, e.g. <a href="https://github.com/sunaku/tamzen-font/tree/master/ttf">Tamzen
+                8x16r</a> or <a href="https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_8x16">IMB VGA
+                8x16</a>. Select a font
+            height. Right click the glyph image, "Save Image as ...", and enjoy your bitmap font.</a>
+        </p>
+        <p>The image consists of 15x15 glyphs, from ASCII code 32 to extended ASCII code 255. Each glyph is <span
+                id="info" style="color: #0e0;"></span> pixels in size.</p>
+        <div style="margin-bottom: 1em;">
+            <button id="load">Load font file</button>
+            <label style="margin-bottom: 1em;">Font height (px): <input id="height" type="number" min="8" max="72"
+                    value="16"></label>
+        </div>
+        <canvas id="output"
+            style="image-rendering: pixelated; -webkit-font-smoothing: none; -moz-osx-font-smoothing: none;"></canvas>
+
+        <input id="file" type="file" style="display: none;" accept=".ttf,.woff">
+    </div>
+</body>
+
+</html>
