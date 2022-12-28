@@ -5,4 +5,4 @@ Fixed width bitmap font generator in the browser for the extended ASCII charset.
 
 Alternatively, install Node.js, then run the `run.sh` script.
 
-This little project uses [freetype-wASM](https://github.com/Ciantic/freetype-wasm)
+This little project uses [freetype-wasm](https://github.com/Ciantic/freetype-wasm)
