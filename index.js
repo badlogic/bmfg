@@ -108,7 +108,7 @@ async function drawFreeType() {
     for (let y = 0; y < 15; y++) {
         let cStr = "";
         for (let i = 0; i < 15 && c <= 255; i++, c++) {
-            cStr += String.fromCharCode(c);
+            cStr += String.fromCodePoint(c);
         }
         await drawString(ctx, cStr, 0, (y + 1) * charHeight + (size.descender >> 6), cache);
 
