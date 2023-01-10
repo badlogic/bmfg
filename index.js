@@ -99,15 +99,15 @@ async function drawFreeType() {
     let info = document.querySelector("#info");
     info.textContent = charWidth + "x" + charHeight;
 
-    canvas.width = charWidth * 15;
-    canvas.height = charHeight * 15;
+    canvas.width = charWidth * 16;
+    canvas.height = charHeight * 14;
     let c = 32
     ctx.fillStyle = "white";
     ctx.strokeStyle = "red";
 
-    for (let y = 0; y < 15; y++) {
+    for (let y = 0; y < 14; y++) {
         let cStr = "";
-        for (let i = 0; i < 15 && c <= 255; i++, c++) {
+        for (let i = 0; i < 16 && c <= 255; i++, c++) {
             cStr += String.fromCodePoint(c);
         }
         await drawString(ctx, cStr, 0, (y + 1) * charHeight + (size.descender >> 6), cache);
