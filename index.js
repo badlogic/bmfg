@@ -108,14 +108,14 @@ async function drawFreeType() {
     for (let y = 0; y < 14; y++) {
         let cStr = "";
         for (let i = 0; i < 16 && c <= 255; i++, c++) {
-            cStr += String.fromCodePoint(c);
+            cStr += c < 31 || (c >= 128 && c < 160) ? " " : String.fromCodePoint(c);
         }
         await drawString(ctx, cStr, 0, (y + 1) * charHeight + (size.descender >> 6), cache);
 
-        /*for (let x = 0; x < 15; x++) {
-            ctx.rect(x * charWidth, y * charHeight, charWidth, charHeight);
-            ctx.stroke()
-        }*/
+        // for (let x = 0; x < 16; x++) {
+        //     ctx.rect(x * charWidth, y * charHeight, charWidth, charHeight);
+        //     ctx.stroke()
+        // }
     }
 }
 
